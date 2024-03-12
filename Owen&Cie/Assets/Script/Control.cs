@@ -8,6 +8,9 @@ public class Control : MonoBehaviour
     internal Vector2 InputValue;
     public int speed;
 
+    public bool isPrimaryWeaponFire;
+    public float primaryWeaponRoloadCooldown;
+
     public bool isStickUse = false;
     public GameObject primaryWeaponProjectil;
     
@@ -61,11 +64,22 @@ public class Control : MonoBehaviour
         {
             transform.position = transform.position + (speed * mouvement * Time.deltaTime);
         }
+        if (isPrimaryWeaponFire)
+        {
+            StartCoroutine(Reload(primaryWeaponRoloadCooldown, isPrimaryWeaponFire));
+        }
     }
 
     private void instantiateProjectil()
     {
         GameObject newBal = Instantiate(primaryWeaponProjectil);
         newBal.transform.position = transform.position;
+    }
+
+    IEnumerator Reload(float _cooldown, bool _weaponReloading)
+    {
+        _weaponReloading = true;
+        yield return new WaitForSeconds(_cooldown);
+        _weaponReloading = false;
     }
 }

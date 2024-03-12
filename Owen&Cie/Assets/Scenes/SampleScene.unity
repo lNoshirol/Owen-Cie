@@ -178,11 +178,23 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
     m_ActionId: 2180d4e7-4a9a-44d4-ac7c-2b6c116e9cd1
     m_ActionName: inGameControle/moove[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1658647233}
+        m_TargetAssemblyTypeName: Control, Assembly-CSharp
+        m_MethodName: OnShootWithPrimaryWeapon
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 7a4ab719-9bdb-4dd4-b746-4f1871b3fc35
     m_ActionName: inGameControle/Primary weapon[/XInputControllerWindows/buttonEast]
   - m_PersistentCalls:
@@ -215,7 +227,7 @@ Transform:
   m_GameObject: {fileID: 215076846}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9656309, y: -0.07648059, z: -0.12587976}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -414,6 +426,53 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1064097656
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1064097658}
+  - component: {fileID: 1064097657}
+  m_Layer: 0
+  m_Name: actionMapSwith
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1064097657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064097656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a63874bc6ab2c946b6892caad4ed0f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSystem: {fileID: 1867166533}
+  inGameActionMap: {fileID: -944628639613478452, guid: dee7f3ed55f91cb428d86022fa3e7c7a, type: 3}
+  _playerInput: {fileID: 215076847}
+--- !u!4 &1064097658
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064097656}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.9656309, y: -0.07648059, z: -0.12587976}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1658647232
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,6 +504,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  isStickUse: 0
+  primaryWeaponProjectil: {fileID: 2108187161660026122, guid: fa199e724820bf241854004b80ed0b01, type: 3}
+  mouvement: {x: 0, y: 0, z: 0}
 --- !u!212 &1658647234
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -599,3 +661,4 @@ SceneRoots:
   - {fileID: 1867166536}
   - {fileID: 1658647235}
   - {fileID: 215076848}
+  - {fileID: 1064097658}
